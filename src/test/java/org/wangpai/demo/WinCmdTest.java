@@ -1,32 +1,14 @@
 package org.wangpai.demo;
 
-import org.junit.jupiter.api.Test;
-
-class WinCmdTest {
-
+public class WinCmdTest {
     public static void main(String[] args) throws Exception {
         var cmd = WinCmd.getInstance();
-        System.out.println(cmd.execute("java --version").getOutput());
-        System.out.println("退出码：" + cmd.getExitValue());
-    }
 
-    @Test
-    void getExitValue() {
-    }
+        System.out.println(cmd.execute("ping baidu.com").getOutput());
+        System.out.println(System.lineSeparator() + "退出码：" + cmd.getExitValue());
 
-    @Test
-    void getOutput() {
-    }
-
-    @Test
-    void execute() {
-    }
-
-    @Test
-    void testExecute() {
-    }
-
-    @Test
-    void getInstance() {
+        System.out.println();
+        System.out.println(cmd.execute("where java").getOutput());
+        System.out.println(System.lineSeparator() + "退出码：" + cmd.getExitValue());
     }
 }
